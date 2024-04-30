@@ -1,0 +1,13 @@
+@use 'main' as *;
+
+.yellow {
+  @include block-icon($yellow-gradient);
+}
+
+.blue {
+  @include block-icon($blue-gradient);
+}
+
+.red {
+  @include block-icon($red-gradient);
+}

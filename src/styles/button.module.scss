@@ -1,0 +1,13 @@
+@use 'main' as *;
+
+.body {
+  @include button-icon($text-light, $text-dark);
+  
+  &_wide { 
+    @include button-icon($text-light, $text-dark, 40px);
+    @include flex-align;
+
+    height: 25px;
+    margin-bottom: -5px;
+  }
+}

@@ -1,0 +1,19 @@
+@use 'main' as *;
+
+.body {
+  width: 100%;
+  position: fixed;
+  top: 75px;
+  bottom: 69px;
+  overflow-y: scroll;
+  
+  .wrapper {
+    @include flex-list(column, 22px);
+    
+    max-width: 1000px;
+    padding: 22px;
+    justify-content: flex-start;
+    margin: auto;
+  }
+
+}

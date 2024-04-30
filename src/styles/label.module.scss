@@ -1,0 +1,31 @@
+@use 'main' as *;
+
+.body {
+  @include flex-list(row, 10px);
+  
+  width: auto;
+  
+  .red {
+    @include label-circle($red-color);
+  }
+
+  .green {
+    @include label-circle($green-color);
+  }
+
+  .yellow {
+    @include label-circle($yellow-gradient);
+
+    box-shadow: 0 0 0 3px rgba($primary-yellow, 50%);
+  }
+
+  &_light {
+    font-size: 14px;
+    color: $text-light;
+  }
+
+  &_dark {
+    font-size: 15px;
+    color: $text-dark;
+  }
+}

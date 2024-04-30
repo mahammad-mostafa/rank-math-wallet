@@ -1,0 +1,57 @@
+@use 'main' as *;
+
+.body {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  direction: rtl;
+  background-color: $menu-overlay;
+  transition: opacity .5s;
+  
+  &_open {
+    @extend #{'.body'};
+    
+    opacity: 1;
+    z-index: 99;
+  }
+  
+  &_close {
+    @extend #{'.body'};
+    
+    opacity: 0;
+    z-index: 99;
+  }
+  
+  .wrapper {
+    @include content-wrapper;
+    
+    .navigation {
+      width: 50%;
+      max-width: 300px;
+      overflow: hidden;
+      direction: ltr;
+      padding-left: 15px;
+      background-color: $block-body;
+      border-radius: 14px;
+      transition: all .5s;
+      clip-path: circle(0);
+      
+      &_show {
+        @extend #{'.navigation'};
+        
+        clip-path: circle(100%);
+      }
+      
+      .list {
+        @include flex-list(column, 1px);
+        
+        background-color: $text-light;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use 'main' as *;
+
+.body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $block-body;
+
+  .bar {
+    @include flex-list(row);
+    @include content-wrapper(0);
+
+    .title {
+      color: $text-dark;
+      font: 30px/30px $text-font;
+    }
+  }
+}
