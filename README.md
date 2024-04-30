@@ -51,6 +51,7 @@ Linting for `JavaScript` using `Eslint` & for `Sass` using `Stylelint`.
 - Responsive layout with all screen sizes
 - Simple hover & transition effects
 - Static side menu toggling
+- Light & dark theme switch
  
 <p align="right"><a href="#title">back to top</a></p>
 
