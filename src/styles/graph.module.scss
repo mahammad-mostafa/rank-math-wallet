@@ -1,0 +1,52 @@
+@use 'main' as *;
+
+.body {
+  @include flex-list(column, 10px);
+
+  margin-top: -10px;
+  
+  .list {
+    @include flex-list(row);
+  }
+  
+  .block {
+    @include section-block($block-body, $block-shadow);
+    @include flex-list(column);
+
+    height: 190px;
+    position: relative;
+    align-items: flex-start;
+    overflow: hidden;
+    
+    .labels {
+      @include flex-list(row);
+    }
+
+    .chart {
+      position: absolute;
+      left: -2px;
+      right: 20px;
+      bottom: 0;
+      height: 80%;
+
+      .primary {
+        stop-color: $primary-yellow;
+      }
+
+      .secondary {
+        stop-color: $secondary-yellow;
+      }
+
+      .area {
+        stop-color: rgba($primary-yellow, 20%);
+      }
+      
+      .dot {
+        @include dot-blink(rgba($primary-yellow, 25%));
+
+        stop-color: rgba($primary-yellow, 50%);
+        animation: dot-blink .5s infinite;
+      }
+    }
+  }
+}

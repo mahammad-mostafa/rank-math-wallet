@@ -1,0 +1,27 @@
+@use 'main' as *;
+
+.body {
+  cursor: pointer;
+  width: 100%;
+  font-size: 15px;
+  color: $text-dark;
+  padding: 15px 15px 15px 0;
+  text-transform: capitalize;
+  background-color: $block-body;
+  transition: color .1s ease-in-out;
+  
+  .link {
+    @include flex-list(row);
+
+    width: 100%;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &:hover {
+    color: $red-color;
+  }
+}

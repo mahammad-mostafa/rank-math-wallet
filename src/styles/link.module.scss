@@ -1,0 +1,18 @@
+@use 'main' as *;
+
+.body {
+  @include section-block($block-body, $block-shadow);
+  @include flex-list(column, 15px);
+
+  border: 1px solid $block-body;
+  transition: border .1s ease-in-out;
+
+  &:hover {
+    border-color: $text-dark;
+  }
+
+  .text {
+    font-size: 15px;
+    color: $text-dark;
+  }
+}

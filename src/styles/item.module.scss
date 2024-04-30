@@ -1,0 +1,23 @@
+@use 'main' as *;
+
+.body {
+  width: 58px;
+  font-size: 14px;
+  color: $text-dark;
+  line-height: 28px;
+  text-transform: capitalize;
+  border-radius: 14px;
+  background: none;
+  border: none;
+  
+  &:hover { 
+    cursor: pointer;
+    color: $badge-text;
+    background-color: $text-light;
+  }
+
+  &_active {
+    @extend #{'.body'};
+    @extend #{':hover'};
+  }
+}
