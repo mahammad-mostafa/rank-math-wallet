@@ -1,0 +1,33 @@
+:root {
+  --text-dark: hsl(212deg 16% 35%);
+  --text-light: hsl(213deg 16% 73%);
+  --page-body: hsl(210deg 33% 96%);
+  --block-body: hsl(0deg 0% 100%);
+  --block-shadow: hsla(237deg 12% 65% / 17%);
+  --menu-overlay: hsla(0deg 0% 0% / 80%);
+}
+
+[data-theme="dark"] {
+  --text-dark: hsl(0deg 0% 100%);
+  --text-light: hsl(0deg 0% 40%);
+  --page-body: hsl(0deg 0% 4%);
+  --block-body: hsl(0deg 0% 0);
+  --block-shadow: hsla(0deg 0% 25% / 17%);
+  --menu-overlay: hsla(0deg 0% 100% / 50%);
+}
+
+
+$text-dark: var(--text-dark);
+$text-light: var(--text-light);
+$page-body: var(--page-body);
+$block-body: var(--block-body);
+$block-shadow: var(--block-shadow);
+$menu-overlay: var(--menu-overlay);
+$badge-text: hsl(0deg 0% 100%);
+$primary-yellow: hsl(42deg 100% 63%);
+$secondary-yellow: hsl(31deg 100% 55%);
+$green-color: hsl(150deg 73% 44%);
+$red-color: hsl(343deg 86% 53%);
+$yellow-gradient: linear-gradient(0deg, $secondary-yellow 0%, $primary-yellow 100%);
+$blue-gradient: linear-gradient(0deg, hsl(216deg 88% 53%) 0%, hsl(194deg 97% 54%) 100%);
+$red-gradient: linear-gradient(0deg, hsl(325deg 96% 56%) 0%, hsl(352deg 100% 70%) 100%);
