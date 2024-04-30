@@ -1,0 +1,89 @@
+@mixin content-wrapper($inline: 22px) {
+  max-width: 1000px;
+  padding: 22px $inline;
+  margin: auto;
+}
+
+@mixin flex-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-list($direction, $gap: 0) {
+  width: 100%;
+  gap: $gap;
+  display: flex;
+  align-items: center;
+  flex-direction: $direction;
+  justify-content: space-between;
+}
+
+@mixin section-block($background, $shadow) {
+  width: 100%;
+  padding: 22px;
+  background: $background;
+  border-radius: 14px;
+  box-shadow: 0 16px 16px $shadow;
+}
+
+@mixin block-icon($background) {
+  @include flex-list(row);
+
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  color: #{hsl(0, 0%, 100%)};
+  background: $background;
+  border: 1px solid transparent;
+  border-radius: 22px;
+
+  svg {
+    @include icon-size;
+  }
+}
+
+@mixin label-circle($background) {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $background;
+}
+
+@mixin icon-size($height: 24px) {
+  width: $height;
+  height: $height;
+}
+
+@mixin button-icon($color, $hover, $height: 24px) {
+  @include flex-align;
+
+  padding: 0 22px;
+  color: $color;
+  transition: color .1s ease-in-out;
+
+  svg {
+    @include icon-size($height);
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $hover;
+  }
+}
+
+@mixin dot-blink($color) {
+  @keyframes dot-blink {
+    0% {
+      stop-color: $color;
+    }
+
+    50% {
+      stop-color: rgba($color, 50%);
+    }
+
+    100% {
+      stop-color: $color;
+    }
+  }
+}
