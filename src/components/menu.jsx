@@ -11,13 +11,6 @@ import { FaMoon, FaSun } from 'react-icons/fa6'
 const Menu = ({ handler, status }) => {
   const [dark, setDark] = useState(false)
   const classes = ['body', 'body_open', 'body_close']
-  const links = [
-    { text: 'edit', icon: <BsInputCursor /> },
-    { text: 'courier info', icon: <LiaBoxSolid /> },
-    { text: 'share', icon: <RiShare2Line /> },
-    { text: 'remove', icon: <FiMinusCircle /> },
-    { text: 'switch theme', icon: dark ? <FaSun /> : <FaMoon /> }
-  ]
   const theme = () => {
     setDark((dark) => !dark)
     if (dark) {
@@ -26,13 +19,20 @@ const Menu = ({ handler, status }) => {
       document.documentElement.setAttribute('data-theme', 'dark')
     }
   }
+  const navigations = [
+    { text: 'edit', icon: <BsInputCursor /> },
+    { text: 'courier info', icon: <LiaBoxSolid /> },
+    { text: 'share', icon: <RiShare2Line /> },
+    { text: 'remove', icon: <FiMinusCircle /> },
+    { text: 'switch theme', icon: dark ? <FaSun /> : <FaMoon />, handler: theme }
+  ]
 
   return (
     <menu className={Styles[classes[status]]} onClick={() => handler()}>
       <div className={Styles.wrapper}>
         <nav className={status === 1 ? Styles.navigation_show : Styles.navigation}>
           <ul className={Styles.list}>
-            {links.map((link, index) => <Navigation key={index} icon={link.icon} text={link.text} handler={theme} />)}
+            {navigations.map((navigation, index) => <Navigation key={index} icon={navigation.icon} text={navigation.text} handler={navigation.handler} />)}
           </ul>
         </nav>
       </div>
